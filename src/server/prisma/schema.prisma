@@ -1,0 +1,80 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://prasanthghantasala2022:2wbizqC6lUBd8AqA@cluster0.x5ukeue.mongodb.net/itsm"
+}
+
+model user {
+  id               String          @id @default(auto()) @map("_id") @db.ObjectId
+  email            String          @unique
+  firstName        String
+  lastName         String
+  password         String
+  role             String
+  teamId           String?
+  createdAt        DateTime        @default(now())
+  updatedAt        DateTime        @updatedAt
+  tickets_created  ticket[]        @relation("user")
+  tickets_assigned ticket[]        @relation("assigne")
+  team             team?           @relation(fields: [teamId], references: [id])
+  ticketHistory    ticketHistory[]
+}
+
+model team {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  user      user[]
+  ticket    ticket[]
+}
+
+model template {
+  id          String   @id @default(auto()) @map("_id") @db.ObjectId
+  title       String
+  description String
+  inputs      Json?
+  type        String   @default("service_request")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model ticket {
+  id             String          @id @default(auto()) @map("_id") @db.ObjectId
+  title          String
+  description    String
+  type           String?         @default("service_request")
+  incidentNumber String?
+  data           Json?
+  status         String?         @default("open")
+  priority       String?
+  assignedTo     String?         @db.ObjectId
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  assigne        user?           @relation("assigne", fields: [assignedTo], references: [id])
+  user           user?           @relation("user", fields: [userId], references: [id])
+  userId         String?         @db.ObjectId
+  teamId         String?
+  team           team?           @relation(fields: [teamId], references: [id])
+  ticketHistory  ticketHistory[]
+}
+
+model ticketHistory {
+  id        String   @id @default(auto()) @map("_id") @db.ObjectId
+  ticketId  String   @db.ObjectId
+  comment   String   @default("")
+  userId    String   @db.ObjectId
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  ticket    ticket   @relation(fields: [ticketId], references: [id])
+  user      user     @relation(fields: [userId], references: [id])
+}

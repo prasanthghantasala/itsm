@@ -1,0 +1,30 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.app {
+    &__link {
+        &:hover {
+            color: gray !important;
+            text-decoration: none;
+        }
+    }
+}
+
+.sidebar {
+    width: 200px;
+    &__link {
+        color: white;
+        // flex
+        display: flex;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        text-decoration: none;
+        &:hover {
+            color: gray;
+            text-decoration: none;
+        }
+    }
+}
