@@ -1,0 +1,102 @@
+[
+  {
+    "name": "Azure AD group creation for Github",
+    "comments": [
+      "Azure AD group 'github-access' created.",
+      "Appropriate permissions and policies applied to 'github-access'.",
+      "Azure AD integration with GitHub established.",
+      "Security audit logs reviewed; no anomalies detected.",
+      "User training session scheduled to guide the use of 'github-access'."
+    ]
+  },
+  {
+    "name": "AWS EC2 deploy",
+    "comments": [
+      "AMI selected based on project requirements.",
+      "EC2 instance launched in the correct region and availability zone.",
+      "Security group configured; inbound traffic limited to necessary ports.",
+      "Deployed application verified and functional.",
+      "Monitoring and logging set up for the EC2 instance."
+    ]
+  },
+  {
+    "name": "Jenkins pipeline setup",
+    "comments": [
+      "Jenkins server provisioned and secured.",
+      "Build pipeline created, including build, test, and deployment stages.",
+      "Credentials for code repository and deployment targets stored securely.",
+      "Webhooks configured for automated pipeline triggering.",
+      "Initial build and deployment successfully executed."
+    ]
+  },
+  {
+    "name": "Database setup",
+    "comments": [
+      "Database engine selected (MySQL, PostgreSQL, etc.).",
+      "Database instance created and configured with appropriate resources.",
+      "Schema designed and implemented.",
+      "User accounts and permissions set up within the database.",
+      "Database backup strategy established."
+    ]
+  },
+  {
+    "name": "Create new VPC with IP ranges",
+    "comments": [
+      "VPC created with desired CIDR block.",
+      "Subnets defined for different tiers (public, private, database).",
+      "Internet Gateway attached (if applicable).",
+      "Routing tables configured for proper network flow.",
+      "Network ACLs and Security Groups set up to enforce security rules."
+    ]
+  },
+  {
+    "name": "Terraform infrastructure provisioning",
+    "comments": [
+      "Terraform configuration files created for desired resources.",
+      "State tracking set up (local or remote backend).",
+      "Terraform plan reviewed for accuracy.",
+      "Terraform applied to create infrastructure.",
+      "Verification testing of provisioned resources."
+    ]
+  },
+  {
+    "name": "Kubernetes cluster deployment",
+    "comments": [
+      "Master nodes provisioned and configured.",
+      "Worker nodes added to the cluster.",
+      "Networking (pods, services) set up correctly.",
+      "Helm installed for package management.", 
+      "Initial application deployment tested."
+    ]
+  },
+  {
+    "name": "DNS record update for new service",
+    "comments": [
+      "Identified the authoritative DNS server for the domain.",
+      "Appropriate DNS record(s) created (A, CNAME, etc.).",
+      "Propagation time considered.",
+      "Records verified using lookup tools.",
+      "Documentation updated with new DNS information." 
+    ]
+  },
+  {
+    "name": "Troubleshooting network latency issue",
+    "comments": [
+      "Problem scope defined (affected users, applications, etc.).",
+      "Network path traced (traceroute, MTR).",
+      "Potential bottlenecks identified (routers, firewalls).",
+      "Configuration changes or optimizations implemented.",
+      "Monitoring set up to ensure issue is resolved."
+    ]
+  },
+  {
+    "name": "Data migration to new storage platform",
+    "comments": [
+      "Backup of existing data taken.",
+      "New storage platform provisioned and configured.",
+      "Data transfer method selected (sync tools, scripting).",
+      "Data integrity verified post-migration.",
+      "Old storage system decommissioned safely."
+    ]
+  }
+]
