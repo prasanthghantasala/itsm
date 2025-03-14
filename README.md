@@ -1,4 +1,4 @@
-# itsm
+# ITSM
 
 ## Setup Instructions
 
